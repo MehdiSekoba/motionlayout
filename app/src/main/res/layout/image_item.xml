@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/motion_parent"
+    android:background="@drawable/bg_constraint"
+    app:layoutDescription="@xml/image_item_scene">
+    <!--image-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/item_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        app:shapeAppearance="@style/RoundedImage"
+        tools:src="@drawable/hafez" />
+    <!--name-->
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12mdp"
+        android:layout_marginBottom="@dimen/_12mdp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_location"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance_Bold"
+        tools:text="Shiraz" />
+    <!--location-->
+    <TextView
+        android:id="@+id/txt_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8mdp"
+        android:layout_marginBottom="@dimen/_12mdp"
+        android:drawablePadding="@dimen/_6mdp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        app:drawableStartCompat="@drawable/location"
+        app:drawableTint="#F11A1A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_name"
+        tools:text="Iran,Shiraz"
+        android:textAppearance="@style/TextAppearance_Bold"
+        />
+    <!--description-->
+    <TextView
+        android:id="@+id/txt_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12font_mdp"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="@dimen/_3mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_img"
+        android:paddingHorizontal="@dimen/_4mdp"/>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

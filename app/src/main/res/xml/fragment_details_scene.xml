@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/nested_scrollview" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/CoverImg"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_240mdp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/name_txt"
+            motion:layout_constraintStart_toEndOf="@id/PosterImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/CoverImg"
+            android:layout_marginStart="@dimen/_12mdp"
+            android:layout_marginTop="@dimen/_6mdp"
+            >
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="@color/gray_900" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/location_txt"
+            motion:layout_constraintStart_toEndOf="@id/PosterImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/name_txt"
+            android:layout_marginStart="@dimen/_15mdp"
+            android:layout_marginTop="@dimen/_2mdp">
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="@color/gray_700" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_22mdp"
+            android:layout_height="@dimen/_22mdp"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_16mdp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/CoverImg"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60mdp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="0">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/white" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/PosterImg"
+            android:elevation="1dp"
+            android:layout_width="@dimen/_55mdp"
+            android:layout_height="@dimen/_55mdp"
+            android:layout_marginStart="@dimen/_20mdp"
+            motion:layout_constraintStart_toEndOf="@id/img_back"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@id/CoverImg"
+            motion:layout_constraintDimensionRatio="h,1:1.5"
+            android:layout_marginTop="42dp"/>
+        <Constraint
+            android:id="@+id/name_txt"
+            motion:layout_constraintStart_toEndOf="@id/PosterImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@id/PosterImg"
+            android:layout_marginStart="@dimen/_12mdp"
+            android:layout_marginTop="@dimen/_6mdp" />
+        <Constraint
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_26mdp"
+            android:layout_height="@dimen/_26mdp"
+            android:visibility="visible"
+            android:layout_marginStart="@dimen/_16mdp"
+            motion:layout_constraintTop_toTopOf="@id/PosterImg"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@id/PosterImg"
+            />
+        <Constraint
+            android:id="@+id/nested_scrollview"
+            android:elevation="0dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/PosterImg"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+    </ConstraintSet>
+</MotionScene>

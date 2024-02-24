@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_details_scene"
+    tools:context=".ui.detail.DetailsFragment">
+
+    <!--Cover-->
+    <ImageView
+        android:id="@+id/CoverImg"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_240mdp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/taj_mahal" />
+    <!--back-->
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="@dimen/_22mdp"
+        android:layout_height="@dimen/_22mdp"
+        android:layout_marginStart="@dimen/_16mdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/gray_700"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_22mdp"/>
+    <!--Scroll-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PosterImg"
+       android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <!--Desc-->
+            <TextView
+                android:id="@+id/txt_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12mdp"
+                android:background="@color/white"
+                android:lineSpacingExtra="@dimen/_6mdp"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingBottom="?attr/actionBarSize"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <!--Poster-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/PosterImg"
+        android:layout_width="@dimen/_100mdp"
+        android:layout_height="@dimen/_100mdp"
+        android:layout_marginStart="@dimen/_20mdp"
+        android:adjustViewBounds="true"
+        android:elevation="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@id/CoverImg"
+        app:layout_constraintDimensionRatio="h,1:1.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CoverImg"
+        app:shapeAppearance="@style/CircleRoundedImage"
+        tools:src="@drawable/taj_mahal" />
+    <!--Name-->
+    <TextView
+        android:id="@+id/name_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12mdp"
+        android:layout_marginTop="@dimen/_6mdp"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/PosterImg"
+        app:layout_constraintTop_toBottomOf="@id/CoverImg"
+        tools:text="shiraz" />
+    <!--location-->
+    <TextView
+        android:id="@+id/location_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_2mdp"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/gray_700"
+        app:layout_constraintStart_toEndOf="@id/PosterImg"
+        app:layout_constraintTop_toBottomOf="@id/name_txt" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
